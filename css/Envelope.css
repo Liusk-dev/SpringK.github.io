@@ -152,4 +152,5 @@ vmax：当前 vw 和 vh 中较大的一个值
     top: 8vmin;
     left: 6vmin;
     right: 6vmin;
+    font-family: 楷体_gb2312;
 }
