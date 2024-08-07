@@ -1,5 +1,71 @@
-<SCRIPT LANGUAGE="javascript">   
-<!--  
-window.open ('login.html')  
--->   
-</SCRIPT>   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        }
+        .container {
+            height: 100%;
+            background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        }
+        .login-wrapper {
+            background-color: #fff;
+            width: 358px;
+            height: 588px;
+            border-radius: 15px;
+            padding: 0 50px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .header {
+            font-size: 16px;
+            font-weight: bold;
+            /* text-align: center; */
+            line-height: 30px;
+            position: relative;
+            top: 30px;
+        }
+        .btn {
+            position: relative;
+            top: 120px;
+            font-size: 20px;
+            border:none;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            height: 42px;
+            margin-top: 40px;
+            background-image: linear-gradient(to right, #a6c1ee, #fbc2eb);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-wrapper">
+            <div class="header">叮咚~您有一封来自师父的邮件，请注意查收！</div>
+            <div class="form-wrapper">
+                <button class="btn" onclick=javascrtpt:jump()>Login</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function jump(){
+            alert("即将进入属于您的专属链接！点击确定进入！");
+            window.location.href="Envelope.html";
+        }
+    </script>
+</body>
+</html>
