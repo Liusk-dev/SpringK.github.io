@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/Card.css">
+    <title>师父(❤ ω ❤)芮芮</title>
+    <link rel="shortcut icon" href="data/icon.png" type="image/x-icon">
+    <style>
+        .head_my {
+          display: flex;
+          justify-content: center;
+          height: 100vh;
+          position: absolute;
+          top: 5%;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            const panels = document.querySelectorAll('.panel')
+                panels.forEach(panel => {
+                    panel.addEventListener('click', () => {
+                        if(panel.classList.contains('active')){
+                            removeActiveClasses();
+                        }
+                        else{
+                            removeActiveClasses();
+                            panel.classList.add('active');
+                        }
+                    })
+                })
+            function removeActiveClasses() {
+                panels.forEach(panel => {
+                    panel.classList.remove('active')
+                })
+            }    
+        }
+    </script>
+
+</head>
+
+<body>
+    <audio id="audio" src="data/0.mp3"></audio>
+    <div class="head_my">
+        <h1 style="font-size: 4rem; color: #f51111">❤</h1>
+        <h1 style="font-size: 4rem; color: #47bed9">2016.8.20-2024.8.20</h1>
+        <h1 style="font-size: 4rem; color: #f51111">❤</h1>
+    </div>
+    <div class="up" style="z-index: 2;" id="up"></div>
+    <div class="down" style="z-index: 2;" id="down"></div>
+    <div class="left">
+        <img src="data/l.png" width="160" height="814" style="z-index: -1;">
+    </div>
+    <div class="right">
+        <img src="data/r.png" width="160" height="814" style="z-index: -1;">
+    </div>
+    <div class="mid">
+        <img src="data/Card.gif" alt="GIF Image" id="Card" draggable="false" style="z-index: 5;" height="360" width="360">
+    </div>
+    <div class="door" id="door" style="background-image: url('data/le.jpg')"></div>
+    <div class="door1" id="door1" style="background-image: url('data/ri.jpg')"></div>
+    <div class="container" id="container">
+        
+        <div class="panel"
+            style="background-image: url('data/a1.jpg')">
+            <h3>Explore The World</h3>
+            <h4>2016</h4>
+            <h5><img src="data/b1.gif" alt="GIF Image" draggable="false" height="60" width="60"></h5>
+        </div>
+        <div class="panel"
+            style="background-image: url('data/a2.jpg')">
+            <h3>Wild Forest</h3>
+            <h4>2017</h4>
+            <h6><img src="data/b2.gif" alt="GIF Image" draggable="false" height="60" width="60"></h6>
+        </div>
+        <div class="panel"
+            style="background-image: url('data/a3.jpg')">
+            <h3>Sunny Beach</h3>
+            <h4>2018</h4>
+            <h5><img src="data/b3.gif" alt="GIF Image" draggable="false" height="60" width="60"></h5>
+        </div>
+        <div class="panel"
+            style="background-image: url('data/a4.jpg')">
+            <h3>高考后，师父用了8个小时做的最完美的流水灯呢！龙潭大峡谷的红石是我们的信物，最开心的是那天晚上我们确定了在同一个城市读大学，这是给我们最好的🎁~开学没多久的国庆，苏州是我们两个第一次一起的城市，还记得苏州傍晚的霞光漫天......</h3>
+            <h4>2019</h4>
+            <h5><img src="data/b4.gif" alt="GIF Image" draggable="false" height="60" width="60"></h5>
+        </div>
+        <div class="panel"
+            style="background-image: url('data/a5.jpg')">
+            <h3>Mountains - Clouds</h3>
+            <h4>2020</h4>
+            <h5><img src="data/b5.gif" alt="GIF Image" draggable="false" height="60" width="60"></h5>
+        </div>
+        <div class="panel"
+            style="background-image: url('data/a6.jpg')">
+            <h3>21年呐，最忆是扬州！还记得那晚的清风，还记得特有的电动车，还记得瘦西湖人挤满人的二十四桥，二十四桥仍在，而人呐，只会路过，但又因为遇到了你，不只是路过，而是共往~记得玄武湖的比心，记得师父第一给小宝贝送❀呀，嘿嘿！</h3>
+            <h4>2021</h4>
+            <h5><img src="data/b6.gif" alt="GIF Image" draggable="false" height="60" width="60"></h5>
+        </div>
+        <div class="panel"
+            style="background-image: url('data/a7.jpg')">
+            <h3>是年初小宝贝包的饺子，是校园的橘色猫猫，是我们拥有的第一辆“车车”，是我们穿梭于南京的夜，是考研埋头复习眼前一亮的夕阳，是师父永远无法弥补的遗憾！如果可以再一次选择，师父一定不会给我们留下遗憾！一路走来，不止有欣喜，亦是遗憾。</h3>
+            <h4>2022</h4>
+            <h5><img src="data/b7.gif" alt="GIF Image" draggable="false" height="60" width="60"></h5>
+        </div>
+        <div class="panel"
+            style="background-image: url('data/a8.jpg')">
+            <h3>就在这年，我们毕业啦！相识于年少，同游于金陵，相遇相知相守。七年前，我们向往江南以江南为约，四年前，我们一起来到江南水乡的金陵，漫漫求学路见证了我们的陪伴，见证了我们的感情！如果再选一次，那还是：师父喜欢小宝贝呀❤！</h3>
+            <h4>2023</h4>
+            <h5><img src="data/b8.gif" alt="GIF Image" draggable="false" height="60" width="60"></h5>
+        </div>
+        <div class="panel"
+            style="background-image: url('data/a9.jpg')">
+            <h3>新的一年呐！仙女小宝贝还是一如既往这么好看，可师父的拍照水平还差好远呐😔聪明小宝贝在今年上岸北航啦💪，距离我们一起生活还有三年呢😀希望我们可以天天一起做饭一起吃饭呐，加油呀，全新的一年！芮芮开开心心的度过接下来的三年哦❤~</h3>
+            <h4>2024</h4>
+            <h5><img src="data/b9.gif" alt="GIF Image" draggable="false" height="60" width="60"></h5>
+        </div>
+
+    </div>
+    <script src="js/Card.js"></script>
+    <script>
+        //禁止复制
+        document.onselectstart=new Function('event.returnValue=false;');
+        //禁止选择文字
+        document.body.onselectstart = function() {
+            self.event.returnValue=false
+        };
+    </script>
+
+</body>
+
+</html>
