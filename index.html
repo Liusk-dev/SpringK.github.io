@@ -18,6 +18,31 @@
             height: 100%;
             background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
         }
+
+
+        .container__ {
+            position: absolute;
+            height: 100%;
+            background-image: linear-gradient(to right, #ffffff, #ffffff);
+        }
+        .head_my {
+          display: flex;
+          justify-content: center;
+          position: relative;
+          top: 5%;
+        }
+        .bu {
+            position: absolute;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 480px;
+            z-index: 9;
+        }
+
+
+
         .login-wrapper {
             background-color: #fff;
             width: 358px;
@@ -52,6 +77,26 @@
         }
     </style>
 </head>
+
+<div class="container__" style="z-index: 999;">
+    <div class="head_my">
+        <h1 style="font-size: 4rem; color: #000000">说了不准打开不准打开！！！咬你把！！！</h1>
+        <div class="bu">
+            <img src="data/tema.gif" alt="GIF Image" id="heart" draggable="false" height="320" width="320" style="display: none;">
+            <button type="button" id="button">不许点！</button>
+        </div>
+    </div>
+</div>
+<script>
+    let button = document.getElementById("button");
+    let heart = document.getElementById("heart");
+    
+    button.addEventListener("click", function () {
+        heart.style.display = "block";
+        button.style.display = "none";
+    })
+</script>
+
 <body>
     <div class="container">
         <div class="login-wrapper">
@@ -66,6 +111,13 @@
             alert("即将进入属于您的专属链接！点击确定进入！");
             window.location.href="Envelope.html";
         }
+
+        //禁止复制
+        document.onselectstart=new Function('event.returnValue=false;');
+        //禁止选择文字
+        document.body.onselectstart = function() {
+            self.event.returnValue=false
+        };
     </script>
 </body>
 </html>
