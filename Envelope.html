@@ -1,78 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <title>师父(❤ ω ❤)芮芮</title>
-    <link rel="shortcut icon" href="data/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/Envelope.css">
-    <style>
-        .head_my {
-          display: flex;
-          justify-content: center;
-          height: 100vh;
-          position: absolute;
-          top: 5%;
-        }
-        .heart {
-            position: absolute;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            top: 480px;
-            z-index: 9;
-        }
-        .baby {
-            /* position: absolute; */
-            position: relative; 
-            cursor: pointer;
-            top: 110px;
-            left: 10px;
-            z-index: 10;
-        }
-    </style>
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+/*重置浏览器样式*/
+* {
+    margin: 0;
+    padding: 0;
+}
+/*
+    使主体居中
+    vw：视窗宽度的百分比（1vw 代表视窗的宽度为 1%）
+    vh：视窗高度的百分比
+*/
+body {
+    height: 120vh;
+    width: 100vw;
+    /* background: #FFE3EC; */
+    background-image: url("../data/background2.jpg");
+    background-size: cover;
+    font-family: 'Pangolin', cursive;
+    font-size: 1vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden hidden;
+} 
 
-</head>
+.container {
+    position: relative;
+    top: 0vmin;
+}
 
-<body>
-    <audio id="audio" src="data/1.mp3" loop="loop"></audio>
-    <audio src="data/click.mp3" class="clickMusic"></audio>
-    <div class="head_my">
-        <h1 style="font-size: 4rem; color: #f51111">❤</h1>
-        <h1 style="font-size: 4rem; color: #47bed9">20165.8.20-2024.8.20</h1>
-        <h1 style="font-size: 4rem; color: #f51111">❤</h1>
-    </div>
-    <div class="heart">
-        <img src="data/heart.gif" alt="GIF Image" id="heart" draggable="false" height="160" width="160">
-    </div>
-    <div class="container" >
-        <div class="envelope" ></div>
-        <div class="card" id="card">
-            <h1 class="message">
-                <p style="font-size: 2rem; color: #000000">师父的芮芮：</p> 
-            </h1>
-            <h1 class="message_tip" id="message_tip">
-                <p style="font-size: 0.8rem">👉看完戳一下~</p> 
-            </h1>
-            <h1 class="messagetxt" style="text-indent:38px"></h1>
-            <div class="baby">
-                <img src="data/0.gif" alt="GIF Image" id="baby" draggable="false" height="100" width="100">
-            </div>
-        </div>
-        <div class="cover"></div>
-        <div class="lid" id="lid"></div>
-        <div class="shadow"></div>
-    </div>
-    <script src="js/Envelope.js"></script>
+.envelope {
+    position: relative;
+    background: #eb7885;
+    height: 45vmin;
+    width: 80.64vmin; /*72*/
+}
 
-    <script>
-        //禁止复制
-        document.onselectstart=new Function('event.returnValue=false;');
-        //禁止选择文字
-        document.body.onselectstart = function() {
-            self.event.returnValue=false
-        };
-    </script>
+.cover {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-bottom: 22.5vmin solid #f5b5bb;
+    border-left: 40.32vmin solid transparent; /*36*/
+    border-right: 40.32vmin solid transparent; /*36*/
+    top: 22.5vmin;
+    z-index: 3;
+    pointer-events: none;
+}
 
-</body>
-</html>
+
+.cover::after {
+    position: absolute;
+    content: '';
+    border-left: 41.16vmin solid #ffbbc1; /*36.75*/
+    border-bottom: 22.5vmin solid transparent; 
+    border-top: 22.5vmin solid transparent;
+    top: -22.5vmin;
+    left: -40.32vmin; /*36*/
+}
+
+.cover::before {
+    position: absolute;
+    content: '';
+    border-right: 41.16vmin solid #ffbbc1; /*36.75*/
+    border-bottom: 22.5vmin solid transparent;
+    border-top: 22.5vmin solid transparent;
+    top: -22.5vmin;
+    left: -0.84vmin; /*0.75*/
+}
+
+#lid {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 22.5vmin solid #ff8896;
+    border-left: 40.32vmin solid transparent; /*36*/
+    border-right: 40.32vmin solid transparent; /*36*/
+    top: 0;
+    transform-origin: top;
+    transition-duration: 0.8s;
+    transition-timing-function: linear;
+    z-index: 2;
+}
+
+#lid.active {
+    transform: rotatex(180deg);
+    transition-delay: 0.3s;
+    transition-duration: 0.8s;
+    transition-timing-function: linear;
+    z-index: 0;
+}
+
+.shadow {
+    position: relative;
+    top: 4.5vmin;
+    border-radius: 50%;
+    opacity: 0.7;
+    height: 3vmin;
+    width: 80.64vmin; /*72*/
+    background: #e8c5d0;
+}
+
+#card {
+    position: absolute;
+    /*白色的卡片*/
+    /* background: #fff4fb; */
+    background: #f3feff;
+    height: 40vmin;
+    width: 72.24vmin; /*64.5*/
+    display: flex;
+    /*设置div水平显示*/
+    flex-direction: column;
+    /*设置flex子项在每个flex行的交叉轴上的中心对齐，交叉轴方向为column，即垂直方向**/
+    align-items: center;
+    /*设置flex子项在主轴上的中心对齐*/
+    justify-content: center;
+    left: 3.75vmin;
+    top: 0vmin;
+    z-index: 1;
+    transition-delay: 1.0s;
+    transition-duration: 1.5s;
+    transition-timing-function: linear;
+}
+
+#card.active{
+    transform: translatey(-18vmin);
+    transition-delay: 1.0s;
+    transition-duration: 1.5s;
+    transition-timing-function: linear;
+}
+
+.message {
+    position: absolute;
+    top: 3vmin;
+    left: 3vmin;
+}
+
+.message_tip {
+    position: absolute;
+    top: 32vmin;
+    left: 24vmin;
+}
+
+.messagetxt {
+    position: absolute;
+    text-align: justify;
+    line-height: 28px;
+    top: 8vmin;
+    left: 6vmin;
+    right: 6vmin;
+}
