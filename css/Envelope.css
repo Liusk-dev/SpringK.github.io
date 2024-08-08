@@ -12,26 +12,22 @@
 body {
     height: 120vh;
     width: 100vw;
-    background: #FFE3EC;
+    /* background: #FFE3EC; */
+    background-image: url("../data/background2.jpg");
+    background-size: cover;
     font-family: 'Pangolin', cursive;
     font-size: 1vmin;
-    /*弹性布局*/
     display: flex;
-    /*设置flex子项在每个flex行的交叉轴上的中心对齐，交叉轴方向为column，即垂直方向**/
     align-items: center;
-    /*设置flex子项在主轴上的中心对齐*/
     justify-content: center;
+    overflow:hidden hidden;
 } 
-/*
-使用相对定位（什么时候用相对定位或绝对定位？在文档流中相对定位的元素占有位置，而且会影响后面的元素（块元素、行内块元素），比如两个div并排，另外一个会换行。而绝对定位就是把该元素从文档流中踢出，不会占用文档流的位置，也不会影响后面的元素。）
-vmin：当前 vw 和 vh 中较小的一个值
-vmax：当前 vw 和 vh 中较大的一个值
-*/
+
 .container {
     position: relative;
     top: 0vmin;
 }
-/*相对定位，并设置背景色和大小*/
+
 .envelope {
     position: relative;
     background: #eb7885;
