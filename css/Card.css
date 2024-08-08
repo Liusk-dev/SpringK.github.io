@@ -10,7 +10,9 @@
 body {
     height: 120vh;
     width: 100vw;
-    background: #FFE3EC;
+    /* background: #FFE3EC; */
+    background-image: url("../data/background3.jpg");
+    background-size: cover;
     font-family: 'Pangolin', cursive;
     font-size: 1vmin;
     /*弹性布局*/
@@ -201,32 +203,4 @@ body {
     display: flex;
     top: 40vmin;
     cursor: pointer;
-}
-
-.up{
-    height: 8vh;
-    width: 90vw;
-    position: absolute;
-    background: #FFE3EC;
-    /* background: #2400c3; */
-    display: flex;
-    /*设置flex子项在每个flex行的交叉轴上的中心对齐，交叉轴方向为column，即垂直方向**/
-    align-items: center;
-    /*设置flex子项在主轴上的中心对齐*/
-    justify-content: center;
-    top: 16.2vmin; 
-}
-
-.down{
-    height: 8vh;
-    width: 90vw;
-    position: absolute;
-    background: #FFE3EC;
-    /* background: #2400c3; */
-    display: flex;
-    /*设置flex子项在每个flex行的交叉轴上的中心对齐，交叉轴方向为column，即垂直方向**/
-    align-items: center;
-    /*设置flex子项在主轴上的中心对齐*/
-    justify-content: center;
-    bottom: 3vmin; 
 }
