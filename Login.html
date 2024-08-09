@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wait</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            overflow:hidden hidden;
+        }
+        .container {
+            height: 100%;
+            /* background-image: linear-gradient(to right, #fbc2eb, #a6c1ee); */
+            background-image: url("data/background1+.jpg");
+            background-size: cover;
+        }
+        .div_clock {
+            position: relative;
+            top: 20vmin;
+            width: 400px;
+            height: 400px;
+            margin: 10px auto;
+            padding: 0;
+        }
+
+        .login-wrapper {
+            /* background-color: #fff; */
+            background-image: url("data/l1.jpg");
+            background-size: cover;
+            width: 358px;
+            height: 588px;
+            border-radius: 15px;
+            padding: 0 50px;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            top: 0%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+        .header {
+            font-size: 28px;
+            font-weight: bold;
+            /* text-align: center; */
+            font-family: 华文行楷;
+            line-height: 30px;
+            position: relative;
+            top: 30px;
+        }
+        .txt {
+            font-size: 24px;
+            /* font-weight: bold; */
+            text-align: justify;
+            font-family: 华文行楷;
+            line-height: 32px;
+            position: relative;
+            left: 0px;
+            right: 0px;
+            top: 50px;
+            text-indent:38px
+        }
+        .poem {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: justify;
+            font-family: 华文仿宋;
+            line-height: 32px;
+            position: relative;
+            left: 0px;
+            right: 0px;
+            top: 50px;
+            text-indent:38px
+        }
+        .clock{
+            position: relative;
+            text-align: center;
+            top: 20vmin;
+            Font-weight: 700;
+            font-size: 60px;
+        }
+        .rose{
+            position: relative;
+            top: 1vmin;
+            left: 30vmin;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="clock">
+            <div id="tips" style="font-family: 华文楷体;"></div>
+            <div id="countdown" style="font-family: 华文楷体;"></div>
+        </div>
+        <div class="div_clock">
+            <canvas id="c1" width="400px" height="400px"></canvas>
+        </div>
+        <div class="login-wrapper" id="login-wrapper">
+            <div class="header">叮咚~<br></div>
+            <div class="txt">亲爱的Miss.C，您有一封来自师父的邮件，请注意查收！《郑风·野有蔓草》，发生于郑国旧地，映照古今鹊桥~<br></div>
+            <div class="poem">野有蔓草，零露漙兮。<br></div>
+            <div class="poem">有美一人，清扬婉兮。<br></div>
+            <div class="poem">邂逅相遇，适我愿兮。<br></div>
+            <div class="poem">野有蔓草，零露瀼瀼。<br></div>
+            <div class="poem">有美一人，婉如清扬。<br></div>
+            <div class="poem">邂逅相遇，与子偕臧。<br></div>
+            <div class="txt">请准备好耳机，建议电脑音量30，接下来是Mr.L为您定制专属网站，单击右侧玫瑰登入~<br></div>
+            <div class="rose" id="rose">
+                <img src="data/l3.png" height="120">
+            </div>
+        </div>
+    </div>
+    <script src="js/Login.js"></script>
+    <script>
+        var targetDate = new Date("2024-08-09T10:48:20");
+        function updateCountdown() {
+            var now = new Date();
+            var timeLeft = targetDate - now;
+            let login_wrapper = document.getElementById("login-wrapper");
+            let tips = document.getElementById("tips");
+            let countdown = document.getElementById("countdown");
+            var clock_ = document.getElementById("c1")
+            var container = document.getElementById("container")
+            if(timeLeft>=0){
+                var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                document.getElementById("tips").innerHTML = "距离820还剩"
+                // document.getElementById("countdown").innerHTML = days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
+                document.getElementById("countdown").innerHTML = (days*24 + hours) + "时 " + minutes + "分 " + seconds + "秒";
+                setTimeout(updateCountdown, 1000);
+            }
+            else{
+                tips.style.display = "none";
+                countdown.style.display = "none";
+                clock_.style.display = "none";
+                container.style.backgroundImage = "url('data/background1.jpg')";
+                document.title = "师父(❤ ω ❤)芮芮"
+                login_wrapper.style.display = "block";
+            }
+        }
+        updateCountdown();
+
+        let rose = document.getElementById("rose");
+        rose.addEventListener("click", function () {
+            location.href = "Envelope.html";
+        })
+
+        function jump(){
+            alert("即将进入属于您的专属链接！点击确定进入！");
+            window.location.href="Envelope.html";
+        }
+
+        //禁止复制
+        document.onselectstart=new Function('event.returnValue=false;');
+        //禁止选择文字
+        document.body.onselectstart = function() {
+            self.event.returnValue=false
+        };
+    </script>
+</body>
+</html>
