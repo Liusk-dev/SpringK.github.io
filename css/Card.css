@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* position: absolute; */
+    height: 120vh;
+    width: 100vw;
+    /* background: #FFE3EC; */
+    background-image: url("../data/background3.jpg");
+    background-size: cover;
+    font-family: 'Pangolin', cursive;
+    font-size: 1vmin;
+    /*弹性布局*/
+    display: flex;
+    /*设置flex子项在每个flex行的交叉轴上的中心对齐，交叉轴方向为column，即垂直方向**/
+    align-items: center;
+    /*设置flex子项在主轴上的中心对齐*/
+    justify-content: center;
+    overflow:hidden hidden;
+}
+
+
+.container {
+    display: flex;
+    width: 88vw;
+}
+
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 64vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    margin-top:-60px;
+    position: relative;
+    transition: all 700ms ease-in;
+}
+
+.panel h3 {
+    font-size: 22px;
+    position: absolute;
+    bottom: -90px;
+    left: 20px;
+    color:darkorange;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel h4 {
+    font-size: 60px;
+    position: absolute;
+    left: 80px;
+    top: -66px;
+    color: black;
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel h5 {
+    font-size: 60px;
+    position: absolute;
+    left: 10px;
+    top: -66px;
+    color: black;
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel h6 {
+    font-size: 60px;
+    position: absolute;
+    left: 20px;
+    top: -66px;
+    color: black;
+    text-align: center;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 8;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel.active h4 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel.active h5 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel.active h6 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
+
+#door {
+    position: absolute;
+    /*白色的卡片*/
+    background: #ffffff;
+    /* background: #f3feff; */
+    height: 64vmin;
+    width: 82vmin;
+    display: flex;
+    /*设置div水平显示*/
+    flex-direction: column;
+    /*设置flex子项在每个flex行的交叉轴上的中心对齐，交叉轴方向为column，即垂直方向**/
+    align-items: center;
+    /*设置flex子项在主轴上的中心对齐*/
+    justify-content: center;
+    left: 8vmin;
+    top: 24.3vmin;
+    transform-origin: left;
+    background-size: cover;
+    z-index: 1;
+    transition-delay: 0.5s;
+    transition-duration: 1.5s;
+}
+
+#door.active{
+    transform: rotatey(90deg);
+    transition-delay: 0.3s;
+    transition-duration: 1.5s;
+    transition-timing-function: ease;
+}
+
+#door1 {
+    position: absolute;
+    /*白色的卡片*/
+    background: #ffffff;
+    /* background: #f3feff; */
+    height: 64vmin;
+    width: 82vmin;
+    display: flex;
+    /*设置div水平显示*/
+    flex-direction: column;
+    /*设置flex子项在每个flex行的交叉轴上的中心对齐，交叉轴方向为column，即垂直方向**/
+    align-items: center;
+    /*设置flex子项在主轴上的中心对齐*/
+    justify-content: center;
+    right: 8vmin;
+    top: 24.3vmin;
+    transform-origin: right;
+    background-size: cover;
+    z-index: 1;
+    transition-delay: 0.5s;
+    transition-duration: 1.5s;
+}
+
+#door1.active{
+    transform: rotatey(90deg);
+    transition-delay: 0.3s;
+    transition-duration: 1.5s;
+    transition-timing-function: ease;
+}
+
+.left {
+    position: absolute;
+    display: flex;
+    left: -1vmin;
+    top: 13vmin;
+}
+
+.right {
+    position: absolute;
+    display: flex;
+    right: -1vmin;
+    top: 13vmin;
+}
+
+.mid {
+    position: absolute;
+    display: flex;
+    top: 40vmin;
+    cursor: pointer;
+}
