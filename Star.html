@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>师父(❤ ω ❤)芮芮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            overflow:hidden hidden;
+        }
+        .container {
+            height: 100%;
+            background-image: url("data/background4.jpg");
+            background-size: cover;
+            vertical-align: middle;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            position: absolute;
+            background-image: url("data/black0.png");
+            background-size: cover;
+            justify-content:center;
+            width: 720px;
+            height: 540px;
+            border-radius: 15px;
+            top: 18%;
+            animation-duration: 1.5s;
+            animation-delay: 0.1s;
+        }
+        .card:hover {
+            animation: slide 1.0s;
+            animation-delay: 0.1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes slide {
+            100% {
+                transform: scale(1.2);
+            }
+        }
+        .star_tip {
+            position: absolute;
+            background-size: cover;
+            justify-content:center;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 15px;
+            top: 0%;
+        }
+        .word {
+            position: absolute;
+            background-size: cover;
+            justify-content:center;
+            border-radius: 15px;
+            top: 5%;
+            display: none;
+        }
+        .tip {
+            position: absolute;
+            background-size: cover;
+            justify-content:center;
+            border-radius: 15px;
+            top: 5%;
+            display: none;
+        }
+        .txt{
+            /* background-color: rgb(255, 255, 255); */
+            display: flex;
+            text-align: center;
+            color: aliceblue;
+            font-family: 华文行楷;
+            font-size: 100px;
+            position: absolute;
+            left: 367px;
+            top: 188px;
+            width: 100px;
+            height: 100px;
+        }
+        .s1{
+            position: absolute;
+            cursor: pointer;
+            left: 210px;
+            top: 110px;
+        }
+        .s2{
+            position: absolute;
+            cursor: pointer;
+            left: 25px;
+            top: 25px;
+        }
+        .s3{
+            position: absolute;
+            cursor: pointer;
+            left: 480px;
+            top: 560px;
+        }
+        .s4{
+            position: absolute;
+            cursor: pointer;
+            left: 1200px;
+            top: 540px;
+        }
+        .s5{
+            position: absolute;
+            cursor: pointer;
+            left: 1400px;
+            top: 240px;
+        }
+        .s6{
+            position: absolute;
+            cursor: pointer;
+            left: 1600px;
+            top: 120px;
+        }
+        .s7{
+            position: absolute;
+            cursor: pointer;
+            left: 1600px;
+            bottom: 30px;
+        }
+        .s8{
+            position: absolute;
+            cursor: pointer;
+            left: 1560px;
+            bottom: 220px;
+        }
+        .s9{
+            position: absolute;
+            cursor: pointer;
+            left: 60px;
+            bottom: 20px;
+        }
+        .s10{
+            position: absolute;
+            cursor: pointer;
+            right: 180px;
+            top: 60px;
+        }
+        .s11{
+            position: absolute;
+            cursor: pointer;
+            left: 80px;
+            top: 200px;
+        }
+        .s12{
+            position: absolute;
+            cursor: pointer;
+            left: 180px;
+            top: 380px;
+        }
+        .s13{
+            position: absolute;
+            cursor: pointer;
+            left: 240px;
+            top: 460px;
+        }
+        .s14{
+            position: absolute;
+            cursor: pointer;
+            left: 200px;
+            top: 640px;
+        }
+        .s15{
+            position: absolute;
+            cursor: pointer;
+            left: 600px;
+            top: 40px;
+        }
+        .s16{
+            position: absolute;
+            cursor: pointer;
+            left: 1360px;
+            top: 380px;
+        }
+        .s17{
+            position: absolute;
+            cursor: pointer;
+            left: 360px;
+            top: 680px;
+        }
+        .s18{
+            position: absolute;
+            cursor: pointer;
+            left: 420px;
+            top: 880px;
+        }
+        .s19{
+            position: absolute;
+            cursor: pointer;
+            left: 120px;
+            top: 760px;
+        }
+        .s20{
+            position: absolute;
+            cursor: pointer;
+            left: 1120px;
+            top: 60px;
+        }
+        .s21{
+            position: absolute;
+            cursor: pointer;
+            left: 1500px;
+            top: 460px;
+        }
+    </style>
+</head>
+
+<body>
+    <audio src="data/sleep.mp3" class="sleep"></audio>
+    <audio id="audio" src="data/2.mp3" loop="loop"></audio>
+    <div class="container" id="container">
+        <div class="star_tip" id="star_tip">
+            <img src="data/star_tip.gif" alt="GIF Image" draggable="false" height="160" width="160">
+        </div>
+        <div class="word" id="word">
+            <img src="data/word.png" draggable="false" height="60">
+        </div>
+        <div class="tip" id="tip">
+            <img src="data/tip.png" draggable="false" height="48">
+        </div>
+        <div class="card" id="card">
+            <div class="txt" id="txt"></div>
+        </div>
+        <div class="s1"><img src="data/star1.png" id="star1" width="40px"></div>
+        <div class="s2"><img src="data/star2.png" id="star2" width="30px"></div>
+        <div class="s3"><img src="data/star3.png" id="star3" width="24px"></div>
+        <div class="s4"><img src="data/star4.png" id="star4" width="42px"></div>
+        <div class="s5"><img src="data/star5.png" id="star5" width="64px"></div>
+        <div class="s6"><img src="data/star6.png" id="star6" width="43px"></div>
+        <div class="s7"><img src="data/star7.png" id="star7" width="23px"></div>
+        <div class="s8"><img src="data/star8.png" id="star8" width="120px"></div>
+        <div class="s9"><img src="data/star9.png" id="star9" width="14px"></div>
+        <div class="s10"><img src="data/star10.png" id="star10" width="60px"></div>
+        <div class="s11"><img src="data/star11.png" id="star11" width="19px"></div>
+        <div class="s12"><img src="data/star12.png" id="star12" width="28px"></div>
+        <div class="s13"><img src="data/star13.png" id="star13" width="18px"></div>
+        <div class="s14"><img src="data/star14.png" id="star14" width="19px"></div>
+        <div class="s15"><img src="data/star15.png" id="star15" width="37px"></div>
+        <div class="s16"><img src="data/star1.png" id="star16" width="21px"></div>
+        <div class="s17"><img src="data/star2.png" id="star17" width="13px"></div>
+        <div class="s18"><img src="data/star3.png" id="star18" width="29px"></div>
+        <div class="s19"><img src="data/star4.png" id="star19" width="13px"></div>
+        <div class="s20"><img src="data/star7.png" id="star20" width="29px"></div>
+        <div class="s21"><img src="data/star9.png" id="star21" width="10px"></div>
+    </div>
+
+    <script>
+        window.onclick = function(){
+            if(audio.paused) {audio.load;audio.play();}
+        }
+        var index = new Array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+        var sign = 0;
+        var sum = 0;
+        let sleep = document.querySelector(".sleep");
+        let star1 = document.getElementById("star1");
+        let star2 = document.getElementById("star2");
+        let star3 = document.getElementById("star3");
+        let star4 = document.getElementById("star4");
+        let star5 = document.getElementById("star5");
+        let star6 = document.getElementById("star6");
+        let star7 = document.getElementById("star7");
+        let star8 = document.getElementById("star8");
+        let star9 = document.getElementById("star9");
+        let star10 = document.getElementById("star10");
+        let star11 = document.getElementById("star11");
+        let star12 = document.getElementById("star12");
+        let star13 = document.getElementById("star13");
+        let star14 = document.getElementById("star14");
+        let star15 = document.getElementById("star15");
+        let star16 = document.getElementById("star16");
+        let star17 = document.getElementById("star17");
+        let star18 = document.getElementById("star18");
+        let star19 = document.getElementById("star19");
+        let star20 = document.getElementById("star20");
+        let star21 = document.getElementById("star21");
+        let card = document.getElementById("card");
+        let star_tip = document.getElementById("star_tip");
+        let word = document.getElementById("word");
+        let tip = document.getElementById("tip");
+        // let txt = document.getElementById("txt");
+        // let txts = document.getElementById("txts");
+
+        star1.addEventListener("click", function () {
+            index[0] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t0.png')";
+            play();
+        })
+        star2.addEventListener("click", function () {
+            index[1] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t1.png')";
+            play();
+        })
+        star3.addEventListener("click", function () {
+            index[2] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t2.png')";
+            play();
+        })
+        star4.addEventListener("click", function () {
+            index[3] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t3.png')";
+            play();
+        })
+        star5.addEventListener("click", function () {
+            index[4] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t4.png')";
+            play();
+        })
+        star6.addEventListener("click", function () {
+            index[5] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t5.png')";
+            play();
+        })
+        star7.addEventListener("click", function () {
+            index[6] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t6.png')";
+            play();
+        })
+        star8.addEventListener("click", function () {
+            index[7] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t7.png')";
+            play();
+        })
+        star9.addEventListener("click", function () {
+            index[8] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t8.png')";
+            play();
+        })
+        star10.addEventListener("click", function () {
+            index[9] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t9.png')";
+            play();
+        })
+        star11.addEventListener("click", function () {
+            index[10] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t10.png')";
+            play();
+        })
+        star12.addEventListener("click", function () {
+            index[11] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t11.png')";
+            play();
+        })
+        star13.addEventListener("click", function () {
+            index[12] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t12.png')";
+            play();
+        })
+        star14.addEventListener("click", function () {
+            index[13] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t13.png')";
+            play();
+        })
+        star15.addEventListener("click", function () {
+            index[14] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t14.png')";
+            play();
+        })
+        star16.addEventListener("click", function () {
+            index[15] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t15.png')";
+            play();
+        })
+        star17.addEventListener("click", function () {
+            index[16] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t16.png')";
+            play();
+        })
+        star18.addEventListener("click", function () {
+            index[17] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t17.png')";
+            play();
+        })
+        star19.addEventListener("click", function () {
+            index[18] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t18.png')";
+            play();
+        })
+        star20.addEventListener("click", function () {
+            index[19] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t19.png')";
+            play();
+        })
+        star21.addEventListener("click", function () {
+            index[20] = 1;
+            setTimeout(function () {sleep.play();}, 50);
+            card.style.backgroundImage = "url('data/t20.png')";
+            play();
+        })
+    
+        function play(){
+            txt.style.display = "none";
+            if(sign==0){
+                sum = index[0]+index[1]+index[2]+index[3]+index[4]+index[5]+index[6]+index[7]+index[8]+index[9]+index[10]+index[11]+index[12]+index[13]+index[14]+index[15]+index[16]+index[17]+index[18]+index[19]+index[20];
+                if(sum==21) {tip.style.display="block";sign=1;}
+            }
+        }
+
+        star_tip.addEventListener("click", function () {
+            sum = index[0]+index[1]+index[2]+index[3]+index[4]+index[5]+index[6]+index[7]+index[8]+index[9]+index[10]+index[11]+index[12]+index[13]+index[14]+index[15]+index[16]+index[17]+index[18]+index[19]+index[20];
+            if(sum==21) {card.style.backgroundImage = "url('data/t.png')";tip.style.display="none";word.style.display="block";}
+            else if(sum==20) card.style.backgroundImage = "url('data/black4.png')";
+            else if(sum==19) card.style.backgroundImage = "url('data/black7.png')";
+            else if(sum==18) card.style.backgroundImage = "url('data/black3.png')";
+            else if(sum==0)card.style.backgroundImage = "url('data/black5.png')";
+            else {
+                txt.style.display = "block";
+                document.getElementById("txt").innerHTML = 21-sum;
+                card.style.backgroundImage = "url('data/black6.png')";}
+        })
+        
+        //禁止复制
+        document.onselectstart=new Function('event.returnValue=false;');
+        //禁止选择文字
+        document.body.onselectstart = function() {
+            self.event.returnValue=false
+        };
+    </script>
+    
+</body>
+</html>

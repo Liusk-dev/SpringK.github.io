@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <title>师父(❤ ω ❤)芮芮</title>
+    <link rel="shortcut icon" href="data/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/Envelope.css">
+    <style>
+        .head_my {
+          display: flex;
+          justify-content: center;
+          height: 100vh;
+          position: absolute;
+          top: 5%;
+        }
+        .heart {
+            position: absolute;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 480px;
+            z-index: 9;
+        }
+        .baby {
+            /* position: absolute; */
+            position: relative; 
+            cursor: pointer;
+            top: 110px;
+            left: 10px;
+            z-index: 10;
+        }
+        .en {
+            position: relative;
+            left: 52vmin;
+            top: -32vmin;
+            /* display: none; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <audio id="audio" src="data/1.mp3" loop="loop"></audio>
+    <audio src="data/click.mp3" class="clickMusic"></audio>
+    <div class="head_my">
+        <h1 style="font-size: 4rem; color: #f51111">❤</h1>
+        <h1 style="font-size: 4rem; color: #47bed9">2016.8.20-2024.8.20</h1>
+        <h1 style="font-size: 4rem; color: #f51111">❤</h1>
+    </div>
+    <div class="heart">
+        <img src="data/heart.gif" alt="GIF Image" id="heart" draggable="false" height="160" width="160">
+    </div>
+    <div class="en" id="en">
+        <img src="data/l2.png" height="180" width="180">
+    </div>
+    <div class="container" >
+        <div class="envelope" ></div>
+        <div class="card" id="card">
+            <h1 class="message">
+                <p style="font-size: 2rem">师父的芮芮：</p> 
+            </h1>
+            <h1 class="message_tip" id="message_tip">
+                <p style="font-size: 0.6rem">👉看完戳一下~</p> 
+            </h1>
+            <h1 class="messagetxt" style="text-indent:38px"></h1>
+            <div class="baby">
+                <img src="data/0.gif" alt="GIF Image" id="baby" draggable="false" height="100" width="100">
+            </div>
+        </div>
+        <div class="cover"></div>
+        <div class="lid" id="lid"></div>
+        <div class="shadow"></div>
+    </div>
+    <script src="js/Envelope.js"></script>
+
+    <script>
+        //禁止复制
+        document.onselectstart=new Function('event.returnValue=false;');
+        //禁止选择文字
+        document.body.onselectstart = function() {
+            self.event.returnValue=false
+        };
+    </script>
+
+</body>
+</html>
