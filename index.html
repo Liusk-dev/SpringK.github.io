@@ -21,15 +21,40 @@
             background-image: url("data/background1+.jpg");
             background-size: cover;
         }
+        .clock{
+            color: #000000;
+            position: relative;
+            text-align: center;
+            top: 20vmin;
+            Font-weight: 700;
+            font-size: 60px;
+        }
+        /* .clock{
+            color: #d78ce4;
+            position: relative;
+            text-align: center;
+            top: 8vmin;
+            left: 56vmin;
+            Font-weight: 700;
+            font-size: 60px;
+        } */
         .div_clock {
             position: relative;
-            top: 20vmin;
+            top: 0vmin;
             width: 400px;
             height: 400px;
             margin: 10px auto;
             padding: 0;
         }
-
+        .we {
+            position: absolute;
+            top: 28vmin;
+            right: 14vmin;
+            width: 500.4px; /*417*/
+            height: 415.2px; /*346*/
+            margin: 10px auto;
+            padding: 0;
+        }
         .login-wrapper {
             /* background-color: #fff; */
             background-image: url("data/l1.jpg");
@@ -78,13 +103,6 @@
             top: 50px;
             text-indent:38px
         }
-        .clock{
-            position: relative;
-            text-align: center;
-            top: 20vmin;
-            Font-weight: 700;
-            font-size: 60px;
-        }
         .rose{
             position: relative;
             top: 1vmin;
@@ -100,10 +118,14 @@
         <div class="clock">
             <div id="tips" style="font-family: 华文楷体;"></div>
             <div id="countdown" style="font-family: 华文楷体;"></div>
+            <div class="div_clock">
+                <canvas id="c1" width="400px" height="400px" style="color: #d78ce4;"></canvas>
+            </div>
+            <div class="we" id="we">
+                <img src="data/we.png" width="500.4px" height="415.2px">
+            </div>
         </div>
-        <div class="div_clock">
-            <canvas id="c1" width="400px" height="400px"></canvas>
-        </div>
+
         <div class="login-wrapper" id="login-wrapper">
             <div class="header">叮咚~<br></div>
             <div class="txt">亲爱的Miss.C，您有一封来自师父的邮件，请注意查收！《郑风·野有蔓草》，发生于郑国旧地，映照古今鹊桥~<br></div>
@@ -121,7 +143,7 @@
     </div>
     <script src="js/Login.js"></script>
     <script>
-        var targetDate = new Date("2024-08-20T00:00:00");
+        var targetDate = new Date("2024-08-20T21:40:00");
         function updateCountdown() {
             var now = new Date();
             var timeLeft = targetDate - now;
@@ -135,7 +157,7 @@
                 var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                document.getElementById("tips").innerHTML = "距离820还剩"
+                document.getElementById("tips").innerHTML = "距离8.20还剩"
                 // document.getElementById("countdown").innerHTML = days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
                 document.getElementById("countdown").innerHTML = (days*24 + hours) + "时 " + minutes + "分 " + seconds + "秒";
                 setTimeout(updateCountdown, 1000);
